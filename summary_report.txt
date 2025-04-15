@@ -1,0 +1,58 @@
+**MemoTag AI/ML Task: Voice-Based Cognitive Decline Detection**
+
+---
+
+### 🌐 Overview
+This proof-of-concept project develops a lightweight machine learning pipeline to detect early signs of cognitive stress or impairment using voice recordings. It uses a combination of natural language and audio features to model deviations that could signal cognitive decline.
+
+---
+
+### 🔎 Dataset
+- **Samples**: 8 anonymized/simulated voice clips (~4–8 seconds each)
+- **Transcriptions**: Created to simulate hesitation, pauses, and speech confusion patterns
+
+---
+
+### 🧬 Feature Engineering
+**Extracted from audio and transcribed text:**
+- **Pauses per sentence**: Detected from fillers like "um", "uh"
+- **Hesitation markers**: Frequency of filler words
+- **Speech rate**: Words per sentence
+- **Hesitation ratio**: Fillers as a percentage of words
+
+---
+
+### 📊 ML Modeling Approach
+**Unsupervised Techniques Used:**
+1. **KMeans Clustering**: To group speakers by speech patterns
+2. **Isolation Forest**: To detect anomalies indicating potential cognitive impairment
+
+These methods were chosen for their interpretability and ability to identify outliers without labeled data.
+
+---
+
+### 🔬 Insights
+- Samples with **higher hesitation and pause rates** showed **anomalous behavior** under both KMeans and Isolation Forest
+- **Slower speech rate** with increased hesitation often correlated with higher anomaly scores
+
+---
+
+### 🔁 Next Steps
+- Use **real-world clinical audio** to validate features
+- Incorporate **acoustic features**: pitch variability, frequency jitter, MFCCs
+- Train supervised models once labeled cognitive data is available
+- Develop a **time-series tracker** for longitudinal monitoring
+
+---
+
+### 📦 Deliverables Summary
+- `notebooks/cognitive_detection.ipynb` - Feature extraction + ML pipeline
+- `src/risk_score_api.py` - Function that computes a cognitive risk score from input metrics
+- `data/` - Audio samples + transcriptions
+- `visuals/feature_trends.png` - Clustering & feature visuals
+- `README.md` - Project setup + usage guide
+
+---
+
+**Prepared by:** AI/ML Contributor for MemoTag 
+**Date:** April 2025
